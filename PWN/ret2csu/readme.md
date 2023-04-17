@@ -1,0 +1,2 @@
+这个是from蒸米的ROP_STEP_BY_STEP中的level5
+应该注意的是，此时的了_libc_csu_init是mov类型的(即gadget2中的是利用mov和rsp的偏移进行赋值，所以需要在每个payload的gedget_address和填充rbx的值之间要加上一个0x8。但个别题目的_libc_csu_init是pop类型，此时就不需要加上0x8这个数据了)
