@@ -1,0 +1,5 @@
+﻿  main.c
+C:\Users\86136\Desktop\编程\Project1\main.c(11,25): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
+C:\Users\86136\Desktop\编程\Project1\main.c(13,24): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
+C:\Users\86136\Desktop\编程\Project1\main.c(21,14): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+  Project1.vcxproj -> C:\Users\86136\Desktop\编程\Project1\x64\Debug\Project1.exe
